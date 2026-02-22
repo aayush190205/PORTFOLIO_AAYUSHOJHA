@@ -1,4 +1,3 @@
-// Particle Background
 class ParticleSystem {
     constructor() {
         this.canvas = document.getElementById('particleCanvas');
@@ -22,7 +21,7 @@ class ParticleSystem {
     }
     
     createParticles() {
-        const particleCount = Math.min(100, Math.floor(window.innerWidth / 20));
+        const particleCount = Math.min(80, Math.floor(window.innerWidth / 25));
         this.particles = [];
         
         for (let i = 0; i < particleCount; i++) {
@@ -32,7 +31,7 @@ class ParticleSystem {
                 vx: (Math.random() - 0.5) * 0.5,
                 vy: (Math.random() - 0.5) * 0.5,
                 size: Math.random() * 2 + 1,
-                opacity: Math.random() * 0.5 + 0.2
+                opacity: Math.random() * 0.5 + 0.1
             });
         }
     }
@@ -68,19 +67,19 @@ class ParticleSystem {
             const dy = this.mouse.y - particle.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
             
-            if (distance < 100) {
-                particle.x -= dx * 0.001;
-                particle.y -= dy * 0.001;
+            if (distance < 120) {
+                particle.x -= dx * 0.002;
+                particle.y -= dy * 0.002;
             }
             
-            // Draw particle
+            // Draw particle (Blue Theme)
             this.ctx.beginPath();
             this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-            this.ctx.fillStyle = `rgba(59, 130, 246, ${particle.opacity})`;
+            this.ctx.fillStyle = `rgba(59, 130, 246, ${particle.opacity})`; // Blue Color
             this.ctx.fill();
         });
         
-        // Draw connections
+        // Draw connections (Blue Theme)
         this.particles.forEach((particle, i) => {
             this.particles.slice(i + 1).forEach(otherParticle => {
                 const dx = particle.x - otherParticle.x;
@@ -91,7 +90,7 @@ class ParticleSystem {
                     this.ctx.beginPath();
                     this.ctx.moveTo(particle.x, particle.y);
                     this.ctx.lineTo(otherParticle.x, otherParticle.y);
-                    this.ctx.strokeStyle = `rgba(59, 130, 246, ${0.1 * (1 - distance / 100)})`;
+                    this.ctx.strokeStyle = `rgba(59, 130, 246, ${0.15 * (1 - distance / 100)})`; // Blue Color
                     this.ctx.lineWidth = 0.5;
                     this.ctx.stroke();
                 }
@@ -145,33 +144,6 @@ class TypeWriter {
     }
 }
 
-// Scroll Animations
-class ScrollAnimations {
-    constructor() {
-        this.elements = document.querySelectorAll('[data-animate]');
-        this.init();
-    }
-    
-    init() {
-        this.observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const animationType = entry.target.dataset.animate;
-                    entry.target.classList.add(animationType);
-                    this.observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-        
-        this.elements.forEach(el => {
-            this.observer.observe(el);
-        });
-    }
-}
-
 // Navigation
 class Navigation {
     constructor() {
@@ -190,13 +162,11 @@ class Navigation {
     }
     
     bindEvents() {
-        // Hamburger menu
         this.hamburger.addEventListener('click', () => {
             this.hamburger.classList.toggle('active');
             this.navMenu.classList.toggle('active');
         });
         
-        // Close menu when clicking on links
         this.navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 this.hamburger.classList.remove('active');
@@ -204,7 +174,6 @@ class Navigation {
             });
         });
         
-        // Scroll spy
         window.addEventListener('scroll', () => {
             this.updateActiveLink();
             this.updateNavbarBackground();
@@ -232,15 +201,15 @@ class Navigation {
     
     updateNavbarBackground() {
         if (window.scrollY > 50) {
-            this.navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            if (document.documentElement.getAttribute('data-theme') === 'dark') {
-                this.navbar.style.background = 'rgba(15, 23, 42, 0.95)';
-            }
+            this.navbar.style.background = document.documentElement.getAttribute('data-theme') === 'dark' 
+                ? 'rgba(15, 23, 42, 0.95)' 
+                : 'rgba(255, 255, 255, 0.95)';
+            this.navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.05)';
         } else {
-            this.navbar.style.background = 'rgba(255, 255, 255, 0.1)';
-            if (document.documentElement.getAttribute('data-theme') === 'dark') {
-                this.navbar.style.background = 'rgba(15, 23, 42, 0.9)';
-            }
+            this.navbar.style.background = document.documentElement.getAttribute('data-theme') === 'dark' 
+                ? 'rgba(15, 23, 42, 0.5)' 
+                : 'rgba(255, 255, 255, 0.1)';
+            this.navbar.style.boxShadow = 'none';
         }
     }
 }
@@ -255,7 +224,6 @@ class ThemeToggle {
     }
     
     init() {
-        // Check for saved theme
         const savedTheme = localStorage.getItem('theme') || 'light';
         this.setTheme(savedTheme);
         
@@ -275,6 +243,12 @@ class ThemeToggle {
         } else {
             this.icon.className = 'fas fa-moon';
         }
+        
+        // Update nav background immediately if scrolled
+        if (window.scrollY > 50) {
+            const navbar = document.querySelector('.navbar');
+            navbar.style.background = theme === 'dark' ? 'rgba(15, 23, 42, 0.95)' : 'rgba(255, 255, 255, 0.95)';
+        }
     }
 }
 
@@ -282,7 +256,9 @@ class ThemeToggle {
 class ContactForm {
     constructor() {
         this.form = document.getElementById('contactForm');
-        this.init();
+        if(this.form) {
+             this.init();
+        }
     }
     
     init() {
@@ -318,10 +294,11 @@ class SmoothScroll {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const targetId = link.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+                if (targetId === '#') return;
                 
+                const targetElement = document.querySelector(targetId);
                 if (targetElement) {
-                    const offsetTop = targetElement.offsetTop - 70;
+                    const offsetTop = targetElement.offsetTop - 75;
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
@@ -342,99 +319,60 @@ class AnimationObserver {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.animationDelay = `${Math.random() * 0.5}s`;
                     entry.target.classList.add('animate');
                 }
             });
         }, {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -50px 0px'
         });
         
         // Observe all cards and sections
-        const elements = document.querySelectorAll('.project-card, .timeline-item, .skill-card, .achievement-card, .section-title');
+        const elements = document.querySelectorAll('.project-card, .timeline-item, .skill-card, .achievement-card');
         elements.forEach(el => observer.observe(el));
     }
 }
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize particle system
     new ParticleSystem();
     
-    // Initialize typing animation
     const typingElement = document.getElementById('typingText');
     if (typingElement) {
         new TypeWriter(typingElement, [
             "Hi, I'm Aayush Ojha",
-            "Web Developer",
-            "Problem Solver",
-            "Tech Enthusiast"
-        ], 150);
+            "Software Developer",
+            "Full-Stack Developer",
+            "Problem Solver"
+        ], 100);
     }
     
-    // Initialize other components
     new Navigation();
     new ThemeToggle();
     new ContactForm();
     new SmoothScroll();
     new AnimationObserver();
     
-    // Add fade-in animation to hero elements
+    // Add fade-in animation to hero elements delay
     setTimeout(() => {
         document.querySelectorAll('.fade-in-up').forEach((el, index) => {
             setTimeout(() => {
                 el.style.opacity = '1';
                 el.style.transform = 'translateY(0)';
-            }, index * 200);
+            }, index * 150);
         });
-    }, 1000);
-    
-    // Add scroll-triggered animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements for animation
-    document.querySelectorAll('.project-card, .timeline-item, .skill-card, .achievement-card').forEach(el => {
-        observer.observe(el);
-    });
+    }, 500);
 });
 
-// Add CSS animations dynamically
 const style = document.createElement('style');
 style.textContent = `
-    .animate {
-        animation: slideInUp 0.8s ease forwards;
-    }
-    
-    @keyframes slideInUp {
-        from {
-            opacity: 0;
-            transform: translateY(50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
     .project-card,
     .timeline-item,
     .skill-card,
     .achievement-card {
         opacity: 0;
-        transform: translateY(50px);
-        transition: all 0.8s ease;
+        transform: translateY(40px);
+        transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
     
     .project-card.animate,
