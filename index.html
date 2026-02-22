@@ -9,10 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Particle Background -->
     <canvas id="particleCanvas"></canvas>
     
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
@@ -39,7 +37,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="hero-text">
@@ -48,9 +45,7 @@
                     <span class="cursor">|</span>
                 </h1>
                 <p class="hero-description fade-in-up">
-                    A dedicated and detail-oriented web developer with a strong foundation in front-end technologies like 
-                    <span class="highlight">HTML, CSS, JavaScript</span> and <span class="highlight">React</span> with the zeal to learn backend fundamentals. 
-                    I aim to deliver secure, scalable web applications with exceptional user experiences.
+                    A dedicated software developer with expertise in <span class="highlight">full-stack web development</span> and <span class="highlight">blockchain technology</span>. I aim to build secure, scalable, and innovative applications that deliver exceptional user experiences.
                 </p>
                 <div class="hero-buttons fade-in-up">
                     <a href="#projects" class="btn btn-primary">
@@ -61,13 +56,17 @@
                 <div class="hero-contact fade-in-up">
                     <a href="mailto:aayushojha1902@gmail.com" class="contact-link">
                         <i class="fas fa-envelope"></i>
-                        aayushojha1902@gmail.com
+                        Email
                     </a>
                     <a href="https://www.linkedin.com/in/aayush-ojha-691496295" target="_blank" class="contact-link">
                         <i class="fab fa-linkedin"></i>
                         LinkedIn
                     </a>
-                    <a href="https://drive.google.com/file/d/14L2xSAUe38-34HEpK0I0bP2QKPMMrdl7/view?usp=sharing" target="_blank" class="contact-link">
+                    <a href="https://github.com/aayush190205" target="_blank" class="contact-link">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                    <a href="https://drive.google.com/file/d/11deKZHVoJJOV7XknsymEsLIEE577O0qM/view?usp=drive_link" target="_blank" class="contact-link">
                         <i class="fas fa-file-pdf"></i>
                         Resume
                     </a>
@@ -81,7 +80,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="container">
             <h2 class="section-title">
@@ -89,32 +87,89 @@
                 <div class="title-underline"></div>
             </h2>
             <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>StudyFlow - AI Learning Assistant</h3>
+                    </div>
+                    <p class="project-description">
+                        AI-powered platform generating interactive flashcards from PDFs with a context-aware AI Tutor.
+                    </p>
+                    <ul class="project-features">
+                        <li>GenAI Flashcard Generation</li>
+                        <li>Context-Aware Document AI Tutor</li>
+                        <li>Real-time study streak tracking</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">LangChain</span>
+                    </div>
+                    <div class="project-links multi-links">
+                        <a href="https://flashcard-frontend-two.vercel.app" target="_blank" class="project-link primary">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://github.com/aayush190205/flashcard_frontend" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Frontend
+                        </a>
+                        <a href="https://github.com/aayush190205/flashcard_backend" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Backend
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Blockchain Certificate Verification</h3>
+                    </div>
+                    <p class="project-description">
+                        Ethereum-based smart contract system to issue, revoke, and verify academic certificates on-chain.
+                    </p>
+                    <ul class="project-features">
+                        <li>Decentralized institution registration</li>
+                        <li>Tamper-proof academic records</li>
+                        <li>MetaMask & Ethers.js integration</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">Solidity</span>
+                        <span class="tech-tag">Ethereum</span>
+                        <span class="tech-tag">Ethers.js</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/aayush190205/block" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://aayush190205.github.io/block/" target="_blank" class="project-link primary">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+
                 <div class="project-card">
                     <div class="project-header">
                         <h3>Digital Voting Machine</h3>
-                        <span class="project-date">Jan 2025</span>
                     </div>
                     <p class="project-description">
-                        Secure voting system with OTP authentication and real-time result tracking.
+                        Secure web-based election system with OTP authentication and real-time result tracking.
                     </p>
                     <ul class="project-features">
-                        <li>OTP-based authentication</li>
-                        <li>Authority panel for result publishing</li>
-                        <li>Live vote count display</li>
+                        <li>OTP-based voter validation</li>
+                        <li>Live vote count & admin dashboard</li>
+                        <li>Tamper-resistant workflow</li>
                     </ul>
                     <div class="project-tech">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
                         <span class="tech-tag">JavaScript</span>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/aayush190205/ONLINE-VOTING" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i>
-                            GitHub
+                            <i class="fab fa-github"></i> GitHub
                         </a>
                         <a href="https://digivotesys.netlify.app/" target="_blank" class="project-link primary">
-                            <i class="fas fa-external-link-alt"></i>
-                            Live Demo
+                            <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
                     </div>
                 </div>
@@ -122,15 +177,14 @@
                 <div class="project-card">
                     <div class="project-header">
                         <h3>ShopMate – E-Commerce</h3>
-                        <span class="project-date">Feb 2025</span>
                     </div>
                     <p class="project-description">
-                        Dynamic e-commerce platform with cart and user auth system.
+                        Dynamic e-commerce platform with an intuitive cart and user authentication system.
                     </p>
                     <ul class="project-features">
                         <li>Product browsing & cart system</li>
-                        <li>Auto-sliding banner</li>
-                        <li>Responsive UI</li>
+                        <li>Auto-sliding promotional banner</li>
+                        <li>Fully responsive UI</li>
                     </ul>
                     <div class="project-tech">
                         <span class="tech-tag">HTML</span>
@@ -139,20 +193,18 @@
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/aayush190205/SHOPMATE-E-COMMERCE-WEBSITE" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i>
-                            GitHub
+                            <i class="fab fa-github"></i> GitHub
                         </a>
                         <a href="https://eshopmate.netlify.app/" target="_blank" class="project-link primary">
-                            <i class="fas fa-external-link-alt"></i>
-                            Live Demo
+                            <i class="fas fa-external-link-alt"></i> Live Demo
                         </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
     <section id="education" class="section">
         <div class="container">
             <h2 class="section-title">
@@ -168,7 +220,10 @@
                             <span class="timeline-period">2023-2027</span>
                         </div>
                         <p class="timeline-degree">B.Tech, Computer Science & Engineering</p>
-                        <p class="timeline-score">CGPA: 8.78</p>
+                        <p class="timeline-score">CGPA: 8.85 / 10.0</p>
+                        <p class="timeline-coursework" style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.9rem;">
+                            <strong>Coursework:</strong> Data Structures & Algorithms, Database Systems, Operating Systems
+                        </p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -178,88 +233,92 @@
                             <h3>Brahm Dutt Blue Bells Public School, Gurugram</h3>
                             <span class="timeline-period">2020-2022</span>
                         </div>
-                        <p class="timeline-degree">Class 10 & 12</p>
-                        <p class="timeline-score">Class 10: 94.8% • Class 12: 82.2%</p>
+                        <p class="timeline-degree">Class 10 & 12 (CBSE)</p>
+                        <p class="timeline-score">Class 12: 82.2% • Class 10: 94.8%</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
             <h2 class="section-title">
-                <span class="title-text">Skills & Certifications</span>
+                <span class="title-text">Technical Skills</span>
                 <div class="title-underline"></div>
             </h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-cuttlefish"></i>
-                    </div>
-                    <h3>C</h3>
-                    <a href="https://drive.google.com/file/d/1qBtN9UbxoLBB-2Dk65EBWAXK3A5cFt_u/view?usp=drivesdk" target="_blank" class="cert-link">
-                        <i class="fas fa-certificate"></i>
-                        Certification
+                    <div class="skill-icon"><i class="fab fa-react"></i></div>
+                    <h3>React.js</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-node-js"></i></div>
+                    <h3>Node.js & Express</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <h3>MongoDB</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-ethereum"></i></div>
+                    <h3>Solidity & Ethereum</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-python"></i></div>
+                    <h3>Python</h3>
+                    <a href="https://drive.google.com/file/d/1qQZ40A_JyYbb-ebFPMIVQsZup8Y6tjp0/view?usp=drivesdk" target="_blank" class="cert-link">
+                        <i class="fas fa-external-link-alt"></i> Certificate Link
                     </a>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">
-                        <i class="fab fa-cuttlefish"></i>
-                        <span class="plus">++</span>
+                        <i class="fab fa-cuttlefish"></i><span class="plus">++</span>
                     </div>
                     <h3>C++</h3>
                     <a href="https://drive.google.com/file/d/1qMM_eYM91Z0JKepHSETlD2rRQy2NLgS5/view?usp=drivesdk" target="_blank" class="cert-link">
-                        <i class="fas fa-certificate"></i>
-                        Certification
+                        <i class="fas fa-external-link-alt"></i> Certificate Link
                     </a>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h3>Python</h3>
-                    <a href="https://drive.google.com/file/d/1qQZ40A_JyYbb-ebFPMIVQsZup8Y6tjp0/view?usp=drivesdk" target="_blank" class="cert-link">
-                        <i class="fas fa-certificate"></i>
-                        Certification
+                    <div class="skill-icon"><i class="fab fa-cuttlefish"></i></div>
+                    <h3>C Programming</h3>
+                    <a href="https://drive.google.com/file/d/1qBtN9UbxoLBB-2Dk65EBWAXK3A5cFt_u/view?usp=drivesdk" target="_blank" class="cert-link">
+                        <i class="fas fa-external-link-alt"></i> Certificate Link
                     </a>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-java"></i>
-                    </div>
-                    <h3>Java</h3>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-html5"></i>
-                    </div>
-                    <h3>HTML</h3>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-css3-alt"></i>
-                    </div>
-                    <h3>CSS</h3>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-js-square"></i>
-                    </div>
+                    <div class="skill-icon"><i class="fab fa-js-square"></i></div>
                     <h3>JavaScript</h3>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-react"></i>
-                    </div>
-                    <h3>React</h3>
+                    <div class="skill-icon"><i class="fab fa-java"></i></div>
+                    <h3>Java</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                    <h3>LangChain & Groq AI</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                    <h3>HTML5 & CSS3</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-wind"></i></div>
+                    <h3>TailwindCSS</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-github"></i></div>
+                    <h3>Git & GitHub</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>REST APIs</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Achievements Section -->
     <section id="achievements" class="section">
         <div class="container">
             <h2 class="section-title">
@@ -268,41 +327,31 @@
             </h2>
             <div class="achievements-grid">
                 <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
+                    <div class="achievement-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>IIT Bombay Spoken Tutorial</h3>
+                    <p>Completed professional training in Python 3.4.3, C++, and C</p>
+                    <span class="achievement-year">2024</span>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
                     <h3>Class Topper</h3>
                     <p>International Olympiad Of Mathematics (IOM)</p>
                     <span class="achievement-year">2021</span>
                 </div>
                 <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3>Class Topper</h3>
-                    <p>International Olympiad Of Science (IOS)</p>
-                    <span class="achievement-year">2021</span>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-medal"></i>
-                    </div>
+                    <div class="achievement-icon"><i class="fas fa-medal"></i></div>
                     <h3>Medal of Distinction</h3>
                     <p>International Mathematics Olympiad (IMO)</p>
                     <span class="achievement-year">2020-21</span>
                 </div>
                 <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3>Class Topper</h3>
-                    <p>National Science Olympiad (NSO)</p>
-                    <span class="achievement-year">2019-20</span>
+                    <div class="achievement-icon"><i class="fas fa-award"></i></div>
+                    <h3>Multiple Topper Awards</h3>
+                    <p>International Olympiad of Science (IOS) & National Science Olympiad (NSO)</p>
+                    <span class="achievement-year">2019-21</span>
                 </div>
                 <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
+                    <div class="achievement-icon"><i class="fas fa-star"></i></div>
                     <h3>Class Rank 2</h3>
                     <p>International Mathematics Olympiad (IMO)</p>
                     <span class="achievement-year">2018-19</span>
@@ -311,7 +360,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
             <h2 class="section-title">
@@ -325,11 +373,11 @@
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <span>aayushojha1902@gmail.com</span>
+                            <a href="mailto:aayushojha1902@gmail.com" style="color: inherit; text-decoration: none;">aayushojha1902@gmail.com</a>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <span>9310027496</span>
+                            <a href="tel:+919310027496" style="color: inherit; text-decoration: none;">+91 9310027496</a>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
@@ -356,7 +404,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
